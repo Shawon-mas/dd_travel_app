@@ -1,5 +1,7 @@
 
+import 'package:dd_travel_app/view/complete_profile.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class EmailLogin extends StatelessWidget {
@@ -16,18 +18,18 @@ class EmailLogin extends StatelessWidget {
             left: 0,
             right: 0,
 
-            child: Container(
-              height: 700,
-              width:double.infinity,
-              child: SingleChildScrollView(
+
+              child: Container(
+                height: 700,
+                width:double.infinity,
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
                   children: [
 
                     Image.asset("assets/logo.png",fit: BoxFit.cover,height: 80,width: 80,),
 
                     SizedBox(
-                      height: 180,
+                      height: 200,
                     ),
                     Column(
                       children: [
@@ -44,13 +46,13 @@ class EmailLogin extends StatelessWidget {
                           ),
                         ),
                         SizedBox(
-                          height: 10,
+                          height: 20,
                         ),
                         SizedBox(
-                          width: 350,
                           child: Padding(
-                            padding: const EdgeInsets.all(20),
+                            padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 0),
                             child: TextFormField(
+                              style: TextStyle(color: Colors.white),
 
                               decoration: InputDecoration(
                                 hintText: 'Your email address',
@@ -76,7 +78,7 @@ class EmailLogin extends StatelessWidget {
 
 
                        Padding(
-                         padding: const EdgeInsets.all(20),
+                         padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
                          child: TextFormField(
 
                            decoration: InputDecoration(
@@ -98,11 +100,11 @@ class EmailLogin extends StatelessWidget {
                          ),
                        ),
                         SizedBox(
-                          height: 50,
+                          height: 30,
                         ),
                         GestureDetector(
                           onTap: (){
-                          //  Get.to(SocialMediaLogIn());
+                           Get.to(CompleteProfile());
                           },
                           child: Container(
 
@@ -133,7 +135,7 @@ class EmailLogin extends StatelessWidget {
                   ],
                 ),
               ),
-            ),)
+            ),
 
 
         ],
