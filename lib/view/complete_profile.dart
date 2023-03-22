@@ -1,5 +1,6 @@
 
 import 'package:dd_travel_app/view/Home/home.dart';
+import 'package:dd_travel_app/view/navbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -178,7 +179,7 @@ class CompleteProfile extends StatelessWidget {
                        ),
                         GestureDetector(
                           onTap: (){
-                             Get.to(HomePage());
+                             Get.to(MyStatefulWidget());
                           },
                           child: Container(
 

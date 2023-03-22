@@ -1,3 +1,4 @@
+import 'package:dd_travel_app/view/navbar.dart';
 import 'package:dd_travel_app/view/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: SplashPage(),
+      home:SplashPage(),
       debugShowCheckedModeBanner: false,
     );
   }
