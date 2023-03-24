@@ -118,12 +118,12 @@ class ForYouPage extends StatelessWidget {
               ),
               Text("Ongoing Campaigns",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.grey),),
               SizedBox(
-                height: MediaQuery.of(context).size.height,
+                height: 500,
                 child: ongoing(),
               ),
               Text("Upcoming Campaigns",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.grey),),
               SizedBox(
-                height: MediaQuery.of(context).size.height,
+                height: 500,
                 child: ongoing(),
               ),
             ],

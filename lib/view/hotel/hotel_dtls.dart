@@ -53,7 +53,8 @@ class HotelsDetails extends StatelessWidget {
                           Container(
                             height: 30,
                             width: 40,
-                            color: Colors.red,
+                            color: Colors.white,
+                            child: Image.asset("assets/youtue.png"),
                           )
 
                         ],),
@@ -111,7 +112,7 @@ class HotelsDetails extends StatelessWidget {
                         ),
 
                         Row(children: [
-                          Image.asset("name"),
+                          Image.asset("assets/tik.png"),
                            Text("Laundry Service"),
                           ],
                         ),

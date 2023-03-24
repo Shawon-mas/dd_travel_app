@@ -116,8 +116,11 @@ class ExplorePage extends StatelessWidget {
                        child: catagories(),
                      ),
                       SizedBox(
-                        height: MediaQuery.of(context).size.height,
+                        height: 500,
                         child: popular(),
+                      ),
+                      SizedBox(
+                        height: 50,
                       )
 
 
@@ -212,114 +215,121 @@ class ExplorePage extends StatelessWidget {
       // scrollDirection: Axis.vertical,
       itemBuilder: (context, index) =>  Stack(
         children: [
-          Card(
-            child: Container(
-              height: 160,
-              width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
+          GestureDetector(
+            onTap: (){
 
-              ),
-              child: Row(
-                children: [
-                  Expanded(
-                      flex:1,
-                      child: ClipRRect(
-                          borderRadius: BorderRadius.only(topLeft: Radius.circular(10),bottomLeft: Radius.circular(10)),
-                          child: Image.asset("assets/hotel.png",height: MediaQuery.of(context).size.height,fit: BoxFit.cover,))
+              Get.to(HotelsDetails());
+
+            },
+            child: Card(
+              child: Container(
+                height: 160,
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+
+                ),
+                child: Row(
+                  children: [
+                    Expanded(
+                        flex:1,
+                        child: ClipRRect(
+                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10),bottomLeft: Radius.circular(10)),
+                            child: Image.asset("assets/hotel.png",height: MediaQuery.of(context).size.height,fit: BoxFit.cover,))
 
 
-                  ),
+                    ),
 
-                  Expanded(
-                    flex:2,
-                    child: Padding(
-                      padding: const EdgeInsets.all(15),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("Seagull Hotel",style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
+                    Expanded(
+                      flex:2,
+                      child: Padding(
+                        padding: const EdgeInsets.all(15),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text("Seagull Hotel",style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
 
-                          Row(
-                            children: [
-                              Icon(Icons.location_on_outlined,size: 15,),
-                              SizedBox(width: 5,),
-                              Text("Coxbazar",style: TextStyle(fontSize: 12,color: Colors.grey)),
-                            ],
-                          ),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          Row(
-                            children: [
-                              Container(
-                                decoration: BoxDecoration(
-                                  //  border: Border.all(color: Colors.grey,width: 2,style: BorderStyle.solid),
-                                  borderRadius: BorderRadius.circular(20),
-                                  color: Colors.grey[200],
+                            Row(
+                              children: [
+                                Icon(Icons.location_on_outlined,size: 15,),
+                                SizedBox(width: 5,),
+                                Text("Coxbazar",style: TextStyle(fontSize: 12,color: Colors.grey)),
+                              ],
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Row(
+                              children: [
+                                Container(
+                                  decoration: BoxDecoration(
+                                    //  border: Border.all(color: Colors.grey,width: 2,style: BorderStyle.solid),
+                                    borderRadius: BorderRadius.circular(20),
+                                    color: Colors.grey[200],
 
-                                ),
-                                padding: EdgeInsets.symmetric(horizontal: 20,vertical: 5),
-                                child: Text("Hotel",style: TextStyle(fontSize: 12,color: Colors.grey)),
-                              ),
-                              SizedBox(width: 5,),
-                              Container(
-                                decoration: BoxDecoration(
-                                  //  border: Border.all(color: Colors.grey,width: 2,style: BorderStyle.solid),
-                                  borderRadius: BorderRadius.circular(20),
-                                  color: Colors.grey[200],
-
-                                ),
-                                padding: EdgeInsets.symmetric(horizontal: 10,vertical: 5),
-                                child: Text("Resturant",style: TextStyle(fontSize: 12,color: Colors.grey),),
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: 15,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Column(
-                                children: [
-                                  Row(
-                                    children: [
-                                      Icon(Icons.star,size: 15,color: Colors.amberAccent,),
-                                      Icon(Icons.star,size: 15,color: Colors.amberAccent,),
-                                      Icon(Icons.star,size: 15,color: Colors.amberAccent,),
-                                      Icon(Icons.star,size: 15,color: Colors.amberAccent,),
-                                      Icon(Icons.star,size: 15,color: Colors.amberAccent,),
-                                    ],
                                   ),
-                                  Text("131 Reviews",style: TextStyle(fontSize: 12,color: Colors.grey))
+                                  padding: EdgeInsets.symmetric(horizontal: 20,vertical: 5),
+                                  child: Text("Hotel",style: TextStyle(fontSize: 12,color: Colors.grey)),
+                                ),
+                                SizedBox(width: 5,),
+                                Container(
+                                  decoration: BoxDecoration(
+                                    //  border: Border.all(color: Colors.grey,width: 2,style: BorderStyle.solid),
+                                    borderRadius: BorderRadius.circular(20),
+                                    color: Colors.grey[200],
 
-                                ],
-                              ),Column(
-                                children: [
+                                  ),
+                                  padding: EdgeInsets.symmetric(horizontal: 10,vertical: 5),
+                                  child: Text("Resturant",style: TextStyle(fontSize: 12,color: Colors.grey),),
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              height: 15,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Column(
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Icon(Icons.star,size: 15,color: Colors.amberAccent,),
+                                        Icon(Icons.star,size: 15,color: Colors.amberAccent,),
+                                        Icon(Icons.star,size: 15,color: Colors.amberAccent,),
+                                        Icon(Icons.star,size: 15,color: Colors.amberAccent,),
+                                        Icon(Icons.star,size: 15,color: Colors.amberAccent,),
+                                      ],
+                                    ),
+                                    Text("131 Reviews",style: TextStyle(fontSize: 12,color: Colors.grey))
 
-                                  Text("Avaiable Offer",style: TextStyle(fontSize: 12,color: Colors.grey)),
-                                  Text("6000Tk",style: TextStyle(fontSize: 18,color: Colors.green,fontWeight: FontWeight.bold)),
-                                  Text("12000Tk",style: TextStyle(fontSize: 12,color: Colors.green,))
-                                ],
-                              )
-                            ],
-                          )
+                                  ],
+                                ),Column(
+                                  children: [
+
+                                    Text("Avaiable Offer",style: TextStyle(fontSize: 12,color: Colors.grey)),
+                                    Text("6000Tk",style: TextStyle(fontSize: 18,color: Colors.green,fontWeight: FontWeight.bold)),
+                                    Text("12000Tk",style: TextStyle(fontSize: 12,color: Colors.green,))
+                                  ],
+                                )
+                              ],
+                            )
 
 
-                        ],
+                          ],
 
 
+                        ),
                       ),
                     ),
-                  ),
 
 
-                ],
+                  ],
+                ),
+
               ),
-
             ),
           ),
           Positioned(
