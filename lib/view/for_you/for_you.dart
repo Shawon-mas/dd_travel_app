@@ -120,7 +120,12 @@ class ForYouPage extends StatelessWidget {
               SizedBox(
                 height: MediaQuery.of(context).size.height,
                 child: ongoing(),
-              )
+              ),
+              Text("Upcoming Campaigns",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.grey),),
+              SizedBox(
+                height: MediaQuery.of(context).size.height,
+                child: ongoing(),
+              ),
             ],
           ),
         ),
@@ -131,14 +136,14 @@ class ForYouPage extends StatelessWidget {
   ongoing(){
     return ListView.builder(
       physics: AlwaysScrollableScrollPhysics(),
-      itemCount:5 ,
+      itemCount:3,
       // scrollDirection: Axis.vertical,
       itemBuilder: (context, index) =>  Padding(
         padding: const EdgeInsets.symmetric(vertical: 5),
         child: Card(
           color: HexColor("#E8F9F1"),
           child: Container(
-            height: 160,
+            height: 130,
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
@@ -160,7 +165,7 @@ class ForYouPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("16 Taka Ticket",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w500),),
+                        Text("16 Taka Ticket",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500),),
                         SizedBox(
                           height: 5,
                         ),

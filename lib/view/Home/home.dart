@@ -129,7 +129,7 @@ class HomePage extends StatelessWidget {
              ),
 
               
-              Text("Offers for you",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+              Text("Offers for you",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
               SizedBox(
                 height: 15,
               ),
@@ -149,13 +149,13 @@ class HomePage extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              Text("Popular Deals",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+              Text("Popular Deals",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
               SizedBox(
                 height: 10,
               ),
 
              SizedBox(
-               height: MediaQuery.of(context).size.height,
+               height:400,
                child: popular(),
              )
 
@@ -185,7 +185,7 @@ class HomePage extends StatelessWidget {
                   color: Colors.white
 
                 ),
-                child:   Center(child: Image.asset('assets/flight1.png',height: 60,)),
+                child:   Center(child: Image.asset('assets/flight1.png',height: 40,)),
               ),
               SizedBox(
                 height: 5,
@@ -197,7 +197,7 @@ class HomePage extends StatelessWidget {
   }
   popular(){
     return ListView.builder(
-      physics: AlwaysScrollableScrollPhysics(),
+    //  physics: AlwaysScrollableScrollPhysics(),
       itemCount:5 ,
      // scrollDirection: Axis.vertical,
       itemBuilder: (context, index) =>  Stack(
@@ -229,16 +229,13 @@ class HomePage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("Seagull Hotel",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+                          Text("Seagull Hotel",style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
 
-                          SizedBox(
-                            height: 5,
-                          ),
                           Row(
                             children: [
                               Icon(Icons.location_on_outlined,size: 15,),
                               SizedBox(width: 5,),
-                              Text("Coxbazar",style: TextStyle(fontSize: 14,color: Colors.grey)),
+                              Text("Coxbazar",style: TextStyle(fontSize: 12,color: Colors.grey)),
                             ],
                           ),
                           SizedBox(
@@ -287,15 +284,15 @@ class HomePage extends StatelessWidget {
                                       Icon(Icons.star,size: 15,color: Colors.amberAccent,),
                                     ],
                                   ),
-                                  Text("131 Reviews",style: TextStyle(fontSize: 14,color: Colors.grey))
+                                  Text("131 Reviews",style: TextStyle(fontSize: 12,color: Colors.grey))
 
                                 ],
                               ),Column(
                                 children: [
 
-                                  Text("Avaiable Offer",style: TextStyle(fontSize: 14,color: Colors.grey)),
-                                  Text("1200Tk",style: TextStyle(fontSize: 18,color: Colors.green,fontWeight: FontWeight.bold)),
-
+                                  Text("Avaiable Offer",style: TextStyle(fontSize: 12,color: Colors.grey)),
+                                  Text("6000Tk",style: TextStyle(fontSize: 18,color: Colors.green,fontWeight: FontWeight.bold)),
+                                  Text("12000Tk",style: TextStyle(fontSize: 12,color: Colors.green,))
                                 ],
                               )
                             ],

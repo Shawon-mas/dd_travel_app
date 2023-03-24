@@ -1,4 +1,6 @@
+import 'package:dd_travel_app/view/hotel/hotel_dtls.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class ExplorePage extends StatelessWidget {
@@ -37,7 +39,7 @@ class ExplorePage extends StatelessWidget {
                   padding: const EdgeInsets.all(15),
                   child: Column(
                     children: [
-                      SizedBox(height: 30,),
+                      SizedBox(height: 20,),
                       Row(
                         children: [
                           GestureDetector(
@@ -49,14 +51,18 @@ class ExplorePage extends StatelessWidget {
                               height: 50,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
-                                  color:HexColor('#08BA64')
+                                  color:Colors.white
                               ),
 
                               child: Center(
                                 child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text("Get Started Now",style: TextStyle(fontWeight:FontWeight.w600,color: Colors.white,fontSize: 16),),SizedBox(width: 10,),Icon(Icons.arrow_forward, color: Colors.white,)
+                                    SizedBox(width: 10,),
+                                    Icon(Icons.date_range, color: Colors.grey,size: 18,),
+                                    SizedBox(width: 10,),
+                                    Text("21 Nov - 1 Dec",style: TextStyle(fontWeight:FontWeight.w600,color: Colors.grey,fontSize: 16),)
                                   ],
                                 ),
                               ),
@@ -68,7 +74,11 @@ class ExplorePage extends StatelessWidget {
                           Container(
                             height: 50,
                             width: 45,
-                            color: Colors.red,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(15)
+                            ),
+                            child: Icon(Icons.search,color: Colors.grey,),
                           ),
                           SizedBox(
                             width: 5,
@@ -76,7 +86,12 @@ class ExplorePage extends StatelessWidget {
                           Container(
                             height: 50,
                             width: 45,
-                            color: Colors.red,
+
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(15)
+                            ),
+                            child: Icon(Icons.stacked_line_chart_sharp,color: Colors.grey,),
                           ),
 
                         ],
@@ -88,9 +103,9 @@ class ExplorePage extends StatelessWidget {
 
                       Center(
                         child: Container(
-                          height: 2,
+                          height: 1,
                           width: 350,
-                          color: Colors.grey,
+                          color: Colors.grey[400],
                         ),
                       ),
                       SizedBox(
@@ -118,25 +133,24 @@ class ExplorePage extends StatelessWidget {
             left: 25,
             child: Row(
               children: [
-                Card(
-                  child: Container(
-                    width: 270,
-                    height: 50,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
+                Container(
+                  width: 280,
+                  height: 50,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                    color: Colors.white
 
-                    ),
+                  ),
 
-                    child: Center(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          SizedBox(width: 5,),
-                        Icon(Icons.location_on_outlined,color: Colors.grey,),
-                          SizedBox(width: 10,),
-                          Text("Select Destination",style: TextStyle(fontWeight:FontWeight.w600,color: Colors.grey,fontSize: 16),),
-                        ],
-                      ),
+                  child: Center(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        SizedBox(width: 5,),
+                      Icon(Icons.location_on_outlined,color: Colors.grey,),
+                        SizedBox(width: 10,),
+                        Text("Select Destination",style: TextStyle(fontWeight:FontWeight.w600,color: Colors.grey,fontSize: 16),),
+                      ],
                     ),
                   ),
                 ),
@@ -146,7 +160,11 @@ class ExplorePage extends StatelessWidget {
                 Container(
                   height: 50,
                   width: 50,
-                  color: Colors.red,
+                  decoration: BoxDecoration(
+                      color:HexColor('#08BA64'),
+                      borderRadius: BorderRadius.circular(15)
+                  ),
+                  child: Icon(Icons.map,color: Colors.white,),
                 )
               ],
             ),),
@@ -189,141 +207,135 @@ class ExplorePage extends StatelessWidget {
   }
   popular(){
     return ListView.builder(
-      physics: AlwaysScrollableScrollPhysics(),
+      //  physics: AlwaysScrollableScrollPhysics(),
       itemCount:5 ,
       // scrollDirection: Axis.vertical,
-      itemBuilder: (context, index) =>  Padding(
-        padding: const EdgeInsets.symmetric(vertical: 5),
-        child: Stack(
-          children: [
-            Card(
-              child: Container(
-                height: 160,
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-
-                ),
-                child: Row(
-                  children: [
-                    Expanded(
-                        flex:1,
-                        child: ClipRRect(
-                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10),bottomLeft: Radius.circular(10)),
-                            child: Image.asset("assets/hotel.png",height: MediaQuery.of(context).size.height,fit: BoxFit.cover,))
-
-
-                    ),
-
-                    Expanded(
-                      flex:2,
-                      child: Padding(
-                        padding: const EdgeInsets.all(15),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("Seagull Hotel",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
-
-                            SizedBox(
-                              height: 5,
-                            ),
-                            Row(
-                              children: [
-                                Icon(Icons.location_on_outlined,size: 15,),
-                                SizedBox(width: 5,),
-                                Text("Coxbazar",style: TextStyle(fontSize: 14,color: Colors.grey)),
-                              ],
-                            ),
-                            SizedBox(
-                              height: 5,
-                            ),
-                            Row(
-                              children: [
-                                Container(
-                                  decoration: BoxDecoration(
-                                    //  border: Border.all(color: Colors.grey,width: 2,style: BorderStyle.solid),
-                                    borderRadius: BorderRadius.circular(20),
-                                    color: Colors.grey[200],
-
-                                  ),
-                                  padding: EdgeInsets.symmetric(horizontal: 20,vertical: 5),
-                                  child: Text("Hotel",style: TextStyle(fontSize: 12,color: Colors.grey)),
-                                ),
-                                SizedBox(width: 5,),
-                                Container(
-                                  decoration: BoxDecoration(
-                                    //  border: Border.all(color: Colors.grey,width: 2,style: BorderStyle.solid),
-                                    borderRadius: BorderRadius.circular(20),
-                                    color: Colors.grey[200],
-
-                                  ),
-                                  padding: EdgeInsets.symmetric(horizontal: 10,vertical: 5),
-                                  child: Text("Resturant",style: TextStyle(fontSize: 12,color: Colors.grey),),
-                                ),
-                              ],
-                            ),
-                            SizedBox(
-                              height: 15,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Column(
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Icon(Icons.star,size: 15,color: Colors.amberAccent,),
-                                        Icon(Icons.star,size: 15,color: Colors.amberAccent,),
-                                        Icon(Icons.star,size: 15,color: Colors.amberAccent,),
-                                        Icon(Icons.star,size: 15,color: Colors.amberAccent,),
-                                        Icon(Icons.star,size: 15,color: Colors.amberAccent,),
-                                      ],
-                                    ),
-                                    Text("131 Reviews",style: TextStyle(fontSize: 14,color: Colors.grey))
-
-                                  ],
-                                ),Column(
-                                  children: [
-
-                                    Text("Avaiable Offer",style: TextStyle(fontSize: 14,color: Colors.grey)),
-                                    Text("1200Tk",style: TextStyle(fontSize: 18,color: Colors.green,fontWeight: FontWeight.bold)),
-
-                                  ],
-                                )
-                              ],
-                            )
-
-
-                          ],
-
-
-                        ),
-                      ),
-                    ),
-
-
-                  ],
-                ),
+      itemBuilder: (context, index) =>  Stack(
+        children: [
+          Card(
+            child: Container(
+              height: 160,
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
 
               ),
+              child: Row(
+                children: [
+                  Expanded(
+                      flex:1,
+                      child: ClipRRect(
+                          borderRadius: BorderRadius.only(topLeft: Radius.circular(10),bottomLeft: Radius.circular(10)),
+                          child: Image.asset("assets/hotel.png",height: MediaQuery.of(context).size.height,fit: BoxFit.cover,))
+
+
+                  ),
+
+                  Expanded(
+                    flex:2,
+                    child: Padding(
+                      padding: const EdgeInsets.all(15),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Seagull Hotel",style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
+
+                          Row(
+                            children: [
+                              Icon(Icons.location_on_outlined,size: 15,),
+                              SizedBox(width: 5,),
+                              Text("Coxbazar",style: TextStyle(fontSize: 12,color: Colors.grey)),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Row(
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                  //  border: Border.all(color: Colors.grey,width: 2,style: BorderStyle.solid),
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: Colors.grey[200],
+
+                                ),
+                                padding: EdgeInsets.symmetric(horizontal: 20,vertical: 5),
+                                child: Text("Hotel",style: TextStyle(fontSize: 12,color: Colors.grey)),
+                              ),
+                              SizedBox(width: 5,),
+                              Container(
+                                decoration: BoxDecoration(
+                                  //  border: Border.all(color: Colors.grey,width: 2,style: BorderStyle.solid),
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: Colors.grey[200],
+
+                                ),
+                                padding: EdgeInsets.symmetric(horizontal: 10,vertical: 5),
+                                child: Text("Resturant",style: TextStyle(fontSize: 12,color: Colors.grey),),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 15,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Icon(Icons.star,size: 15,color: Colors.amberAccent,),
+                                      Icon(Icons.star,size: 15,color: Colors.amberAccent,),
+                                      Icon(Icons.star,size: 15,color: Colors.amberAccent,),
+                                      Icon(Icons.star,size: 15,color: Colors.amberAccent,),
+                                      Icon(Icons.star,size: 15,color: Colors.amberAccent,),
+                                    ],
+                                  ),
+                                  Text("131 Reviews",style: TextStyle(fontSize: 12,color: Colors.grey))
+
+                                ],
+                              ),Column(
+                                children: [
+
+                                  Text("Avaiable Offer",style: TextStyle(fontSize: 12,color: Colors.grey)),
+                                  Text("6000Tk",style: TextStyle(fontSize: 18,color: Colors.green,fontWeight: FontWeight.bold)),
+                                  Text("12000Tk",style: TextStyle(fontSize: 12,color: Colors.green,))
+                                ],
+                              )
+                            ],
+                          )
+
+
+                        ],
+
+
+                      ),
+                    ),
+                  ),
+
+
+                ],
+              ),
+
             ),
-            Positioned(
-                right: 20,
-                child: Stack(
-                  children: [
-                    Image.asset("assets/discount.png"),
-                    Positioned(
-                        top: 8,
-                        left: 5,
+          ),
+          Positioned(
+              right: 20,
+              child: Stack(
+                children: [
+                  Image.asset("assets/discount.png"),
+                  Positioned(
+                      top: 8,
+                      left: 5,
 
 
-                        child: Text("20%",style: TextStyle(fontSize: 12,color: Colors.white),))
-                  ],
-                ))
-          ],
-        ),
+                      child: Text("20%",style: TextStyle(fontSize: 12,color: Colors.white),))
+                ],
+              ))
+        ],
       ),);
   }
 }

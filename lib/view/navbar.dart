@@ -20,10 +20,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget>
     HomePage(),
     ExplorePage(),
     ForYouPage(),
-    Text(
-      'World',
-      style: optionStyle,
-    ),
+    ExplorePage(),
     Profile()
   ];
 
