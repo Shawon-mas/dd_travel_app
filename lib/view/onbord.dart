@@ -51,13 +51,15 @@ class OnboardPage extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: (){
-                          Get.to(SocialMediaLogIn());
+
+                          Get.to(()=>const SocialMediaLogIn());
                         },
                         child: Container(
                           width: 300,
                           height: 50,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
+
                             color:HexColor('#08BA64')
                           ),
 
